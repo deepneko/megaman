@@ -1,7 +1,7 @@
 module Stage
   class Bg
     def initialize
-      @stage = Image.new("../img/stage1.png")
+      @stage = Image.new("../img/bg1.png")
     end
 
     def update

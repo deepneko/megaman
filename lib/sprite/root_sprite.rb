@@ -9,7 +9,7 @@ module Sprite
       init
     end
 
-    def create_img
+    def create_img(t=nil)
       @image = TransparentImage.new(image_fname)
       @image.w, @image.h = image_size
       @image.offset_x, @image.offset_y = image_offset
