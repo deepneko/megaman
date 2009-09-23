@@ -69,7 +69,7 @@ module Sprite
       a = "#{action}_#{direction}".to_sym
       @image.start_animation a
 
-      @vy = -13 if action == :jump
+      @vy = -10 if action == :jump
       @vy = DEFAULT_Y if action == :stand
     end
 
