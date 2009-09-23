@@ -135,7 +135,7 @@ module Sprite
       p ""
       return if jumping? or y >= LAND_Y
       return if @blocks.any? {|b| b.y == y and hit_x?(b)}
-      p "-----------------------------------------"
+      exit
       start_action(:fall)
     end
 
