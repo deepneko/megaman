@@ -132,9 +132,9 @@ module Sprite
     end
 
     def fall_from_block
-      p ""
       return if jumping? or y >= LAND_Y
       return if @blocks.any? {|b| b.y == y and hit_x?(b)}
+      p "mo"
       start_action(:fall)
     end
 
