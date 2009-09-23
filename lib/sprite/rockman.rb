@@ -132,6 +132,7 @@ module Sprite
     end
 
     def fall_from_block
+      p ""
       return if jumping? or y >= LAND_Y
       return if @blocks.any? {|b| b.y == y and hit_x?(b)}
       start_action(:fall)
@@ -143,6 +144,7 @@ module Sprite
 
     def hit_x?(target)
       dx = target.w / 2
+      p [x, target.x-dx, target.x+dx]
       x >= target.x - dx and x <= target.x + dx
     end
 
