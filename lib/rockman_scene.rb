@@ -47,6 +47,7 @@ class RockmanScene < Scene::Base
     @blocks << Sprite::SmallBlock.new(1093, 96)
 
     @blocks << Sprite::Goblin.new(288, 112)
+    @blocks << Sprite::Goblin.new(463, 128)
     @blocks << Sprite::Goblin.new(623, 64)
     @blocks << Sprite::Goblin.new(798, 96)
     @blocks << Sprite::Goblin.new(958, 96)
