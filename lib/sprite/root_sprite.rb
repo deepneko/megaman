@@ -2,15 +2,19 @@ module Sprite
   class RootSprite
     attr_accessor :x, :y, :w, :h
 
-    def initialize(x = 0, y = 0)
+    def initialize(x = 0, y = 0, t=nil)
       @x, @y = x, y
-      create_img
+      create_img(t)
       @image.add_animation(animations) if animations
       init
     end
 
     def create_img(t=nil)
-      @image = TransparentImage.new(image_fname)
+      if t
+        @image = TransparentImage.new(image_fname) 
+      else
+        @image = Image.new(image_fname)
+      end
       @image.w, @image.h = image_size
       @image.offset_x, @image.offset_y = image_offset
     end

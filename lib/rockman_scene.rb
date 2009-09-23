@@ -8,7 +8,7 @@ class RockmanScene < Scene::Base
   def init
     @bg = Stage::Bg.new
     create_blocks
-    @rockman = Sprite::Rockman.new
+    @rockman = Sprite::Rockman.new(110, -10, true)
     @rockman.blocks = @blocks
     set_camera_position(@rockman)
   end
@@ -44,7 +44,7 @@ class RockmanScene < Scene::Base
     @blocks << Sprite::SmallBlock.new(910, 96)
     @blocks << Sprite::SmallBlock.new(1071, 96)
     @blocks << Sprite::SmallBlock.new(1087, 96)
-    @blocks << Sprite::SmallBlock.new(1093, 96)
+    @blocks << Sprite::SmallBlock.new(1103, 96)
 
     @blocks << Sprite::Goblin.new(288, 112)
     @blocks << Sprite::Goblin.new(463, 128)

@@ -4,8 +4,6 @@ module Sprite
   class Rockman < RootSprite
     attr_writer :blocks
     START_HORIZON = 0
-    DEFAULT_X = 110
-    DEFAULT_Y = -10 # 128 - rockman_height
     LAND_Y = 400
 
     def image_size
@@ -18,8 +16,6 @@ module Sprite
 
     def init
       @vy = @vx = 0
-      self.x = DEFAULT_X
-      self.y = DEFAULT_Y
       @last_y = self.y
       start_action :stand, :right
     end
@@ -70,7 +66,7 @@ module Sprite
       @image.start_animation a
 
       @vy = -10 if action == :jump
-      @vy = DEFAULT_Y if action == :stand
+      @vy = 0 if action == :stand
     end
 
     def control
@@ -132,7 +128,6 @@ module Sprite
     end
 
     def fall_from_block
-      p ""
       return if jumping? or y >= LAND_Y
       return if @blocks.any? {|b| b.y == y and hit_x?(b)}
       start_action(:fall)
@@ -144,7 +139,7 @@ module Sprite
 
     def hit_x?(target)
       dx = target.w / 2
-      p [x, target.x-dx, target.x+dx]
+      #p [x, target.x-dx, target.x+dx]
       x >= target.x and x <= target.x + target.w
     end
 
