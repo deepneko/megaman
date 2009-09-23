@@ -136,8 +136,6 @@ module Sprite
       return if jumping? or y >= LAND_Y
       return if @blocks.any? {|b| b.y == y and hit_x?(b)}
       start_action(:fall)
-      exit if $count
-      $count = 1
     end
 
     def hit_block?(block)
