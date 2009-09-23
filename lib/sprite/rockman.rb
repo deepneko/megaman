@@ -147,7 +147,7 @@ module Sprite
     def hit_x?(target)
       dx = target.w / 2
       p [x, target.x-dx, target.x+dx]
-      x >= target.x - dx and x <= target.x + dx
+      x >= target.x and x <= target.x + target.w
     end
 
     def update
